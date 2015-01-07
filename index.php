@@ -68,8 +68,8 @@
 		"{$this­>lastName}";
 		}
 }
-	$dog1 = new Dog(“BooBoo”, “Iwao”, “EnglishBulldog”);
-	print “Dog 1: {$dog1­>getName()}\n;
+	$cat1 = new Cat(“Kitty”, “Kat”, “Cat”);
+	print “Cat 1: {$cat1­>getName()}\n;
 
 	//Example 2
 	class hotdog {
@@ -87,8 +87,8 @@
 		"{$this­>lastName}";
 		}
 }
-	$dog1 = new Dog(“BooBoo”, “Iwao”, “EnglishBulldog”);
-	print “Dog 1: {$dog1­>getName()}\n;
+	$hotdog1 = new hotdog(“ketchup”, “mustard”, “bacon”);
+	print “hotdog 1: {$hotdog1­>getName()}\n;
 
 	//Example 3 
 	class Milkshake {
@@ -106,5 +106,5 @@
 		"{$this­>lastName}";
 		}
 }
-	$dog1 = new Dog(“BooBoo”, “Iwao”, “EnglishBulldog”);
-	print “Dog 1: {$dog1­>getName()}\n;
+	$Milkshake1 = new Milkshake(“chocolate”, “strawberry”, “vanilla”);
+	print “Milkshake 1: {$Milkshake1­>getName()}\n;

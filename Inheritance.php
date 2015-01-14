@@ -1,3 +1,5 @@
+	<!--Lecture 4-->
+	<!--Example 1 -->
 <?php 
 	class School {
 		public $math;
@@ -32,7 +34,7 @@ $math = new School("math", "science", "english", "PE", "art", "history", "app");
 print "School 1: " . $math->getName();
 ?>
 
-
+	<!--Example 2 -->
 
 <?php 
 	class Cookie {
@@ -68,6 +70,7 @@ $chocolatechip = new Cookie("gingerbread", "chocolatechip", "sugar", "snickerdoo
 print "<br>" ."Cookie 1: " . $chocolatechip->getName() . "</br>";
 ?>
 
+	<!--Example 3 -->
 
 <?php 
 	class Sports {

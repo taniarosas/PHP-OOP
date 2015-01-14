@@ -28,7 +28,7 @@ class math extends School{
 	}
 }
 
-$math = new school("math", "science", "english", "PE", "art", "history", "app");
+$math = new School("math", "science", "english", "PE", "art", "history", "app");
 print "School 1: " . $math->getName();
 ?>
 
@@ -55,7 +55,7 @@ print "School 1: " . $math->getName();
 		}
 		function getName(){
 			return  "My favorite cookie is " . $this->chocolatechip .
-			" and my least favorite cookie is " . $this->gingerbread ;
+			" and my least favorite cookie is " . $this->raison ;
 		}
 	}
 class chocolatechip extends Cookie{
@@ -64,6 +64,41 @@ class chocolatechip extends Cookie{
 	}
 }
 
-$chocolatechip = new Cookie("snickerdoodle", "sugar", "peanutbutter", "chocolatechip", "raison", "gingerbread", "oatmeal");
+$chocolatechip = new Cookie("gingerbread", "chocolatechip", "sugar", "snickerdoodle", "raison", "oatmeal", "peanutbutter");
 print "<br>" ."Cookie 1: " . $chocolatechip->getName() . "</br>";
+?>
+
+
+<?php 
+	class Sports {
+		public $volleyball;
+		public $soccer;
+		public $basketball;
+		public $tennis;
+		public $football;
+		public $baseball;
+		public $softball;
+
+		function __construct($volleyball, $soccer, $basketball, $tennis, $football, $baseball, $softball) {
+			$this->volleyball = $volleyball;
+			$this->soccer = $soccer;
+			$this->basketball = $basketball;
+			$this->tennis = $tennis;
+			$this->football = $football;
+			$this->baseball = $baseball;
+			$this->softball = $softball;
+		}
+		function getName(){
+			return "My favorite sport is " . $this->volleyball .
+			" and my least favorite sport is " . $this->soccer;
+		}
+	}
+class volleyball extends Sports{
+	function team() {
+	return $this->soccer;
+	}
+}
+
+$volleyball = new Sports("volleyball", "soccer", "basketball", "tennis", "football", "baseball", "softball");
+print "Sports 1: " . $volleyball->getName();
 ?>

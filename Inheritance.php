@@ -7,28 +7,39 @@
 		public $english;
 		public $PE;
 		public $art;
-		public $history;
-		public $app;
-
-		function __construct($math, $science, $english, $PE, $art, $history, $app) {
+		
+		function __construct($math, $science, $english, $PE, $art) {
 			$this->math = $math;
 			$this->science = $science;
 			$this->english = $english;
 			$this->PE = $PE;
 			$this->art = $art;
-			$this->history = $history;
-			$this->app = $app;
 		}
 		function getName(){
 			return "My favorite subject is " . $this->math .
 			" and my least favorite subject is " . $this->english;
 		}
 	}
+
 class math extends School{
-	function subject() {
-	return $this->english;
+	function __construct($math, $science, $english, $PE, $art, $history){
+		parent::__construct($math, $science, $english, $PE, $art);
+		$this->history = $history;
+		}
+		function greet(){
+			return $this->history;
+		}
 	}
-}
+
+class science extends School{
+	function __construct($math, $science, $english, $PE, $art, $app){
+		parent::__construct($math, $science, $english, $PE, $art );
+		$this->app = $app;
+		}
+		function greet(){
+			return $this->app;
+		}
+	}
 
 $math = new School("math", "science", "english", "PE", "art", "history", "app");
 print "School 1: " . $math->getName();
@@ -42,27 +53,38 @@ print "School 1: " . $math->getName();
 		public $chocolatechip;
 		public $sugar;
 		public $snickerdoodle;
-		public $raison;
-		public $oatmeal;
 		public $peanutbutter;
 
-		function __construct($gingerbread, $chocolatechip, $sugar, $snickerdoodle, $raison, $oatmeal, $peanutbutter) {
+		function __construct($gingerbread, $chocolatechip, $sugar, $snickerdoodle, $peanutbutter) {
 			$this->gingerbread = $gingerbread;
 			$this->chocolatechip = $chocolatechip;
 			$this->sugar = $sugar;
 			$this->snickerdoodle = $snickerdoodle;
-			$this->raison = $raison;
-			$this->oatmeal = $oatmeal;
 			$this->peanutbutter = $peanutbutter;
 		}
 		function getName(){
 			return  "My favorite cookie is " . $this->chocolatechip .
-			" and my least favorite cookie is " . $this->raison ;
+			" and my least favorite cookie is " . $this->peanutbutter ;
 		}
 	}
-class chocolatechip extends Cookie{
-	function flavor() {
-	return $this->raison;
+
+class snickerdoodle extends Cookie{
+	function __construct($gingerbread, $chocolatechip, $sugar, $snickerdoodle, $raison, $peanutbutter){
+		parent::__construct($gingerbread, $chocolatechip, $sugar, $snickerdoodle, $peanutbutter);
+		$this->raison = $raison;
+	}
+	function greet(){
+		return $this->raison;
+	}
+}
+
+class  sugar extends Cookie{
+	function __construct($gingerbread, $chocolatechip, $sugar, $snickerdoodle, $oatmeal, $peanutbutter){
+		parent::__construct($gingerbread, $chocolatechip, $sugar, $snickerdoodle, $peanutbutter);
+		$this->oatmeal = $oatmeal;
+	}
+		function greet(){
+		return $this->oatmeal;
 	}
 }
 
@@ -78,27 +100,38 @@ print "<br>" ."Cookie 1: " . $chocolatechip->getName() . "</br>";
 		public $soccer;
 		public $basketball;
 		public $tennis;
-		public $football;
 		public $baseball;
-		public $softball;
 
-		function __construct($volleyball, $soccer, $basketball, $tennis, $football, $baseball, $softball) {
+		function __construct($volleyball, $soccer, $basketball, $tennis, $baseball) {
 			$this->volleyball = $volleyball;
 			$this->soccer = $soccer;
 			$this->basketball = $basketball;
 			$this->tennis = $tennis;
-			$this->football = $football;
 			$this->baseball = $baseball;
-			$this->softball = $softball;
 		}
 		function getName(){
 			return "My favorite sport is " . $this->volleyball .
 			" and my least favorite sport is " . $this->soccer;
 		}
 	}
-class volleyball extends Sports{
-	function team() {
-	return $this->soccer;
+
+class baseball extends Sports{
+	function __construct($volleyball, $soccer, $basketball, $tennis, $baseball, $football){
+		parent::__construct($volleyball, $soccer, $basketball, $tennis, $baseball);
+		$this->football = $football;
+	}
+	function greet(){
+		return $this->football;
+	}
+}
+
+class  tennis extends Sports{
+	function __construct($volleyball, $soccer, $basketball, $tennis,$baseball, $softball){
+		parent::__construct($volleyball, $soccer, $basketball, $tennis, $baseball);
+		$this->softball = $softball;
+	}
+	function greet(){
+		return $this->softball;
 	}
 }
 

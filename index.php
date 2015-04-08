@@ -3,19 +3,20 @@
 
 	//Example 1
 	class Food {
-		public $firstName = "default name";
-		public $lastName = "default last name";
-		public $gender = "male";
-		public $price = 0;
+		public $firstName = "default name";
+		public $lastName = "default last name";
+		public $gender = "male";
+		public $price = 0;
 		function getName() {
 		return "{$this­>firstName}" .
 		"{$this­>lastName}";
 		}
 }
 	$Food = new Food();
-	$Food1­>firstName = "Pizza";
-	$Food1­>lastName = "Shake";
+	$Food1­>firstName = "Pizza";
+	$Food1­>lastName = "Shake";
 	print "The food’s name is {$Food1­>getName()}.";
+
 
 	//Example 2 
 	class Dolphin {
@@ -108,3 +109,4 @@
 }
 	$Milkshake1 = new Milkshake(“chocolate”, “strawberry”, “vanilla”);
 	print “Milkshake 1: {$Milkshake1­>getName()}\n;
+	?>
